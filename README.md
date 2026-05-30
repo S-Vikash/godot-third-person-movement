@@ -12,7 +12,7 @@ A simple third-person character controller built in Godot.
 
 ## DEMO
 
-https://github.com/user-attachments/assets/6a391e1e-8918-4fc0-b31f-12d0e45b125a
+https://github.com/user-attachments/assets/9dba08e0-ef20-4216-b6c9-ba40a2cb1181
 
 
 ## Controls
