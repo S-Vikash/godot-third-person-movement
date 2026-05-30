@@ -8,6 +8,12 @@ A simple third-person character controller built in Godot.
 - Character jumping
 - Smooth player controls
 - Third-person camera using spring arm
+- Reload level on fall
+
+## DEMO
+
+https://github.com/user-attachments/assets/6a391e1e-8918-4fc0-b31f-12d0e45b125a
+
 
 ## Controls
 
@@ -35,4 +41,4 @@ Godot 4.x
 - Character states
 
 ## Author
-Vikash
+Vikash S
