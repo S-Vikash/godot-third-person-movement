@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cgecym635kyfv"]
+
+[ext_resource type="Texture2D" uid="uid://c7rhb2jbpqffx" path="res://icon.svg" id="1_prdum"]
+
+[resource]
+albedo_color = Color(0.16862746, 0.18431373, 0.22745098, 1)
+albedo_texture = ExtResource("1_prdum")
+metallic = 1.0
+metallic_specular = 0.0
+roughness = 0.4
+uv1_scale = Vector3(10, 10, 10)

@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cx5nf0avdeu3n"]
+
+[ext_resource type="Material" uid="uid://ci2p80ju6wshb" path="res://Material/player.tres" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://ko7ur5gmhl27" path="res://Scripts/player.gd" id="1_fkybt"]
+[ext_resource type="Material" uid="uid://betsnb8gfgepn" path="res://Material/eyes.tres" id="2_6t5aa"]
+[ext_resource type="Script" uid="uid://5d1aqynhl726" path="res://Scripts/spring_arm.gd" id="3_6t5aa"]
+[ext_resource type="Script" uid="uid://bdi2ndfhkm588" path="res://Scripts/camera_follow.gd" id="4_vgqql"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vgqql"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fkybt"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_x3wgy"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6t5aa"]
+
+[node name="Player" type="CharacterBody3D" unique_id=770403151 node_paths=PackedStringArray("spring_arm_pivot", "player_body")]
+script = ExtResource("1_fkybt")
+spring_arm_pivot = NodePath("Spring_arm_pivot")
+player_body = NodePath("Body")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1876440741]
+shape = SubResource("CapsuleShape3D_vgqql")
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=194479208]
+mesh = SubResource("CapsuleMesh_fkybt")
+surface_material_override/0 = ExtResource("1_cvnsp")
+
+[node name="eyes" type="MeshInstance3D" parent="Body" unique_id=786776714]
+transform = Transform3D(-1.5298985e-08, -1.197, -1.5298985e-08, 0, -5.232253e-08, 0.35, -0.35, 5.232253e-08, 6.687399e-16, 0, 0.5, -0.5)
+mesh = SubResource("BoxMesh_x3wgy")
+surface_material_override/0 = ExtResource("2_6t5aa")
+
+[node name="Spring_arm_pivot" type="Node3D" parent="." unique_id=1405565739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+script = ExtResource("3_6t5aa")
+
+[node name="spring_arm" type="SpringArm3D" parent="Spring_arm_pivot" unique_id=1610985184]
+shape = SubResource("SphereShape3D_6t5aa")
+spring_length = 5.0
+
+[node name="spring_arm_pos" type="Node3D" parent="Spring_arm_pivot/spring_arm" unique_id=1895443818]
+
+[node name="Camera3D" type="Camera3D" parent="Spring_arm_pivot" unique_id=1135623207 node_paths=PackedStringArray("spring_arm_pos")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.8000001)
+script = ExtResource("4_vgqql")
+spring_arm_pos = NodePath("../spring_arm/spring_arm_pos")
