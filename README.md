@@ -37,7 +37,6 @@ Godot 4.x
 
 - Animations
 - Sprinting
-- Camera collision
 - Character states
 
 ## Author
